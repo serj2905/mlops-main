@@ -1,11 +1,9 @@
 import sys
 from datetime import datetime
 from pathlib import Path
-
 from airflow import DAG
 from airflow.operators.python import PythonOperator
 
-# Airflow запускает DAG из папки dags, поэтому добавляем корень проекта в импорт.
 PROJECT_DIR = Path(__file__).resolve().parents[1]
 if str(PROJECT_DIR) not in sys.path:
     sys.path.insert(0, str(PROJECT_DIR))
